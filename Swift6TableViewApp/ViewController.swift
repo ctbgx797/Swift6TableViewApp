@@ -1,9 +1,4 @@
-//
-//  ViewController.swift
-//  Swift6TableViewApp
-//
-//  Created by 西谷恭紀 on 2020/11/28.
-//
+
 
 import UIKit
 
@@ -11,6 +6,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBOutlet var textField: UITextField!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var swichLabel: UILabel!
+    @IBOutlet var gorillaSwitch: UISwitch!
     
     var textArray = [String]()
     var imageArray = ["1","2","3","4","5"]
@@ -18,6 +15,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        swichLabel.text = "Hurman Mode"
+        gorillaSwitch.isOn = false
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -66,6 +65,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         
     }
+
+    @IBAction func chengeGorilla(_ sender: Any) {
+        
+        if gorillaSwitch.isOn{
+            swichLabel.text = "Gorilla Mode"
+        }else{
+            swichLabel.text = "Hurman Mode"
+        }
+        
+    }
     
 }
-
